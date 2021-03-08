@@ -5,7 +5,7 @@ import pytest
 marker = 'X'
 name = 'Alex'
 board = Board()
-index = 6
+index = 5
 player = Player(marker=marker, name=name, board=board)
 
 
@@ -16,4 +16,7 @@ def test_player():
 
 
 def test_play():
-    player.play()
+    print(board.updates)
+    player.play(index)
+    assert board.get_value(index) == player.marker
+    assert index in player.moves
