@@ -2,15 +2,18 @@ from .. import board
 import pytest
 
 n = 3
-value = 'X'
-board_array = [['X', 'X', 'X'],
+default_value = 'X'
+board_state = [['X', 'X', 'X'],
                ['X', 'X', 'X'],
                ['X', 'X', 'X']]
-board_obj = board.Board(n=n, value=value)
+board_obj = board.Board(n=n, value=default_value)
+index = 6  # 2, 0
+i1, i2 = 2, 0
+value = 'O'
 
 
-def test_board():
-    assert board_obj.board == board_array
+def test_state():
+    assert board_obj.state == board_state
 
 
 def test_str():
@@ -19,3 +22,16 @@ def test_str():
     except:
         assert False
     assert True
+
+
+def test_convert_index():
+    assert board_obj.convert_index(index) == (i1, i2)
+
+
+def test_update():
+    new_board_state = [['X', 'X', 'X'],
+                       ['X', 'X', 'X'],
+                       ['O', 'X', 'X']]
+    new_board_obj = board.Board(n=n, value=default_value)
+    new_board_obj.update(6, value)
+    assert new_board_obj.state == new_board_state
