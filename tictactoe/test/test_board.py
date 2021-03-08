@@ -1,4 +1,4 @@
-from . import board as board
+from .. import board
 import pytest
 
 n = 3
@@ -14,4 +14,8 @@ def test_board():
 
 
 def test_str():
-    print(board_obj)
+    try:
+        print(board_obj)
+    except:
+        assert False
+    assert True
