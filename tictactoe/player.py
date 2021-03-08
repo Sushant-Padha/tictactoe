@@ -11,5 +11,6 @@ class Player:
         self.marker = marker
         self.name = name
         return
+
     def play(self):
         pass

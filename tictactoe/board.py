@@ -9,14 +9,15 @@ class Board:
     '''Defines new board to play tictactoe
     '''
 
-    def __init__(self, n: int, value: Any = ''):
+    def __init__(self, n: int, value: str = ''):
         '''Instantiate new board instance
 
         Args:
             n (int): dimension of board
+            value (str): value to fill the board with
         '''
         self.n = n
-        self.board = [[value for _ in range(n)].copy() for _ in range(n)]
+        self.state = [[value for _ in range(n)].copy() for _ in range(n)]
 
     def __str__(self):
         '''Pretty representation of board
@@ -26,4 +27,13 @@ class Board:
         #         print()
         #     for j, col in enumerate(row):
         #         pass
-        return np.array(self.board).__str__()
+        return np.array(self.state).__str__()
+
+    def update(self, index: int, value: str):
+        '''Update board state
+
+        Args:
+            index (int): index of position to update
+            value (str): value to update to
+        '''
+        pass
