@@ -9,7 +9,7 @@ class Board:
     '''Defines new board to play tictactoe
     '''
 
-    def __init__(self, n: int, value: str = ''):
+    def __init__(self, n: int = 3, value: str = ''):
         '''Instantiate new board instance
 
         Args:
@@ -36,7 +36,11 @@ class Board:
             index (int): index of position to update
             value (str): value to update to
         '''
-        pass
+        i1, i2 = self.convert_index(index)
+        try:
+            self.state[i1][i2] = value
+        except:
+            raise IndexError('Invalid index')
 
     @staticmethod
     def convert_index(index: int):
