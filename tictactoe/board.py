@@ -1,7 +1,6 @@
 from typing import Any
 import numpy as np
 
-global box_drawing
 box_drawing = ['┛', '┫', '┓', '┳', '┏', '┣', '┗', '┻', '━', '┃', '╋']
 
 
