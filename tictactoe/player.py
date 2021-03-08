@@ -4,6 +4,8 @@ from tictactoe.board import Board
 class Player:
     '''Defines new tictactoe player
     '''
+    # list of all moves made by player
+    moves = []
 
     def __init__(self, marker: str, name: str = 'NewPlayer',
                  board: Board = Board()):
@@ -35,3 +37,4 @@ class Player:
             self.board.update(index, self.marker)
         except:
             raise IndexError("index is invalid for board")
+        self.moves.append(index)
