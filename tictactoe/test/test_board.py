@@ -35,3 +35,12 @@ def test_update():
     new_board_obj = board.Board(n=n, value=default_value)
     new_board_obj.update(6, value)
     assert new_board_obj.state == new_board_state
+
+
+def test_update_exception():
+    new_board_obj = board.Board(n=n, value=default_value)
+    try:
+        new_board_obj.update(9, value)  # should raise IndexError
+    except:
+        assert True
+    assert False
