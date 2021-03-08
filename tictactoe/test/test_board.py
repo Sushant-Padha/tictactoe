@@ -10,6 +10,7 @@ board_obj = Board(n=n, value=default_value)
 index = 6  # 2, 0
 i1, i2 = 2, 0
 value = 'O'
+out_of_range_index = 9
 
 
 def test_state():
@@ -33,14 +34,15 @@ def test_update():
                        ['X', 'X', 'X'],
                        ['O', 'X', 'X']]
     new_board_obj = Board(n=n, value=default_value)
-    new_board_obj.update(6, value)
+    new_board_obj.update(index, value)
     assert new_board_obj.state == new_board_state
+    assert index in new_board_obj.updates
 
 
 def test_update_exception():
     new_board_obj = Board(n=n, value=default_value)
     try:
-        new_board_obj.update(9, value)  # should raise IndexError
+        new_board_obj.update(out_of_range_index, value)  # raise IndexError
     except:
         assert True
         return
