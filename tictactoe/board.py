@@ -37,3 +37,17 @@ class Board:
             value (str): value to update to
         '''
         pass
+
+    @staticmethod
+    def convert_index(index: int):
+        '''Convert index to two indices for 2d array
+
+        Args:
+            index (int): index
+
+        Returns:
+            tuple: two indices
+        '''
+        i1 = index // 3
+        i2 = index % 3
+        return i1, i2
