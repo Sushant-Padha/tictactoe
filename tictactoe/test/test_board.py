@@ -43,4 +43,5 @@ def test_update_exception():
         new_board_obj.update(9, value)  # should raise IndexError
     except:
         assert True
+        return
     assert False
