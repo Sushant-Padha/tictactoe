@@ -97,6 +97,3 @@ def test_find_player_by_marker():
 def test_play():
     print("Get ready to play tictactoe (for testing purposes) ...")
     game.play()
-
-
-test_play()
