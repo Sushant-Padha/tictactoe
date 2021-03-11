@@ -110,7 +110,7 @@ class Game:
             move = int(move)
         except:
             return False
-        if self.board.n**2 - 1 < move < 0:
+        if move > self.board.n**2 - 1 or move < 0:
             return False
         if move in self.moves:
             return False
