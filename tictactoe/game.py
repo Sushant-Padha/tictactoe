@@ -31,7 +31,8 @@ class Game:
     def winner(self):
         for line in self.vertical(), self.horizontal(), self.diagonal():
             if line is not None:
-                return line
+                marker = line
+                return self.find_player_by_marker(marker)
         return None
 
     def vertical(self):
@@ -114,3 +115,9 @@ class Game:
         if move in self.moves:
             return False
         return True
+
+    def find_player_by_marker(self, marker: str):
+        players = self.player1, self.player2
+        for p in players:
+            if p.marker == marker:
+                return p
