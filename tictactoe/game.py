@@ -91,8 +91,9 @@ class Game:
                 self.last_move_invalid = True
                 console.clear()
                 continue
-            self.last_move_invalid = False
             move = int(move)
+            self.last_move_invalid = False
+            self.moves.append(move)
             player.play(move)
             winner = self.winner()
         else:
