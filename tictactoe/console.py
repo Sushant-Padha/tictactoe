@@ -15,8 +15,10 @@ class Console:
     def clear():
         os.system('cls')
 
+    @staticmethod
     def print(*args, **kwargs):
         return print(*args, **kwargs)
 
+    @staticmethod
     def input(*args, **kwargs):
         return input(*args, **kwargs)
