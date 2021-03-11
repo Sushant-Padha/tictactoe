@@ -1,12 +1,12 @@
-# from tictactoe.player import Player
-# from tictactoe.board import Board
-# from tictactoe.console import Console
-# from tictactoe.game import Game
+from tictactoe.player import Player
+from tictactoe.board import Board
+from tictactoe.console import Console
+from tictactoe.game import Game
 
-from ..player import Player
-from ..board import Board
-from ..console import Console
-from ..game import Game
+# from ..player import Player
+# from ..board import Board
+# from ..console import Console
+# from ..game import Game
 
 
 marker1, marker2 = 'X', 'O'
