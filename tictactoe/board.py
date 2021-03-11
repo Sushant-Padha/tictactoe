@@ -19,7 +19,7 @@ class Board:
                 structure and state of board. Defaults to None
         '''
         if state is None:
-            state = [['' for _ in range(n)].copy() for _ in range(n)]
+            state = [[' ' for _ in range(n)].copy() for _ in range(n)]
         self.n = n
         self.state = state
 
