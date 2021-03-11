@@ -68,7 +68,7 @@ class Game:
         '''
         markers = (self.player1.marker, self.player2.marker)
         reduced = set(iter)
-        if len(reduced) == 1 and reduced[0] in markers:
+        if len(reduced) == 1 and reduced.pop() in markers:
             return True
         else:
             return False
