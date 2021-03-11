@@ -1,6 +1,7 @@
 from typing import Iterable
 from tictactoe.board import Board
 from tictactoe.player import Player
+from tictactoe.console import Console
 
 
 class Game:
@@ -13,17 +14,19 @@ class Game:
     last_move_invalid = False
 
     def __init__(self, player1: Player, player2: Player,
-                 board: Board = Board()) -> None:
+                 board: Board = Board(), console: Console = Console()) -> None:
         '''Instantiate new game class
 
         Args:
             player1 (Player): player 1
             player2 (Player): player 2
             board (Board): board. Defaults to Board()
+            console (Console): console. Defaults to Console()
         '''
         self.player1 = player1
         self.player2 = player2
         self.board = board
+        self.console = console
 
     def winner(self):
         for line in self.vertical(), self.horizontal(), self.diagonal():
@@ -70,6 +73,7 @@ class Game:
             return False
 
     def play(self):
+        console = self.console
         winner = None
         i = 0
         while winner is None:
@@ -79,23 +83,26 @@ class Game:
                 player = player
             else:
                 player = self.player1 if i % 2 != 0 else self.player2
-            print(self.board)
-            move = input(f"'{player.name}' make your move: ")
+            console.print(self.board)
+            move = console.input(f"'{player.name}' make your move: ")
             if self.valid_move(move):
-                print('Invalid move. Please try again.')
+                console.print('Invalid move. Please try again.')
                 self.last_move_invalid = True
+                console.clear()
                 continue
             self.last_move_invalid = False
             move = int(move)
             player.play(move)
             winner = self.winner()
         else:
-            print(f"Congratulations '{player.name}'! You have won the game.")
-            print("Thanks for playing the game!")
-            feedback = input("Please leave some feedback for improvment: ")
-            print("Thank you for your feedback.")
-            print("Your feedback will be promptly ignored.")
-            print("Peace ✌")
+            console.print(f"Congratulations '{player.name}'! " +
+                          "You have won the game.")
+            console.print("Thanks for playing the game!")
+            feedback = console.input(
+                "Please leave some feedback for improvment: ")
+            console.print("Thank you for your feedback.")
+            console.print("Your feedback will be promptly ignored.")
+            console.print("Peace ✌")
 
     def valid_move(self, move: str):
         try:
