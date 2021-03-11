@@ -1,7 +1,7 @@
 from typing import Iterable
-from tictactoe.board import Board
-from tictactoe.player import Player
-from tictactoe.console import Console
+from board import Board
+from player import Player
+from console import Console
 
 
 class Game:
