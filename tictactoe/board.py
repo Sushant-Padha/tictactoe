@@ -1,4 +1,4 @@
-from typing import Any
+from typing import Any, Iterable
 import numpy as np
 
 box_drawing = ['┛', '┫', '┓', '┳', '┏', '┣', '┗', '┻', '━', '┃', '╋']
@@ -10,16 +10,18 @@ class Board:
     # list of all prior updates to board state
     updates = []
 
-    def __init__(self, n: int = 3, value: str = ''):
+    def __init__(self, n: int = 3, state: Iterable[Iterable[str]] = None):
         '''Instantiate new board instance
 
         Args:
-            n (int): dimension of board
-            value (str): value to fill the board with
+            n (int): dimension of board. Defaults to 3
+            state (Iterable[Iterable[str]]): data structure representing
+                structure and state of board. Defaults to None
         '''
         self.n = n
-        self.value = value
-        self.state = [[value for _ in range(n)].copy() for _ in range(n)]
+        if state is None:
+            state = [['' for _ in range(n)].copy() for _ in range(n)]
+        self.state = state
 
     def __str__(self):
         '''Pretty representation of board

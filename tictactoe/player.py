@@ -27,12 +27,8 @@ class Player:
             index (int): index to change
 
         Raises:
-            ValueError: the move has already been made
             IndexError: index is invalid for board
         '''
-        # check if this move has been made
-        if index in self.board.updates:
-            raise ValueError("The move has already been made")
         try:
             self.board.update(index, self.marker)
         except:
