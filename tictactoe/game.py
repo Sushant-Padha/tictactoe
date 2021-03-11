@@ -43,7 +43,7 @@ class Game:
         return None
 
     def horizontal(self):
-        for row in range(self.board.state):
+        for row in self.board.state:
             if self.valid_line(row):
                 return row[0]
         return None
