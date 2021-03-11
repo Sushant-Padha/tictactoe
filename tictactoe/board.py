@@ -18,9 +18,9 @@ class Board:
             state (Iterable[Iterable[str]]): data structure representing
                 structure and state of board. Defaults to None
         '''
-        self.n = n
         if state is None:
             state = [['' for _ in range(n)].copy() for _ in range(n)]
+        self.n = n
         self.state = state
 
     def __str__(self):
