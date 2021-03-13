@@ -14,11 +14,3 @@ class Console:
     @staticmethod
     def clear():
         os.system('clear')
-
-    @staticmethod
-    def print(*args, **kwargs):
-        return print(*args, **kwargs)
-
-    @staticmethod
-    def input(*args, **kwargs):
-        return input(*args, **kwargs)
