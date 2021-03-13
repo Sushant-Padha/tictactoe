@@ -19,7 +19,8 @@ def main():
     player1 = Player(marker=marker1, name=name1, board=board)
     player2 = Player(marker=marker2, name=name2, board=board)
     game = Game(player1=player1, player2=player2, board=board, console=console)
-    print("The game begins! Good luck.")
+    input("The game begins! Good luck. [Press Enter to start]")
+    console.clear()
     winner = game.play()
     console.print(f"Congratulations '{winner.name}'! " +
                   "You have won the game.")
