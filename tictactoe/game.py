@@ -75,6 +75,7 @@ class Game:
 
     def play(self):
         console = self.console
+        console.print(self.board)
         winner = None
         i = 0
         while winner is None:
@@ -84,7 +85,6 @@ class Game:
                 player = player
             else:
                 player = self.player1 if i % 2 != 0 else self.player2
-            console.print(self.board)
             move = console.input(f"'{player.name}' make your move: ")
             if not self.valid_move(move):
                 console.print('Invalid move. Please try again.')
@@ -96,6 +96,7 @@ class Game:
             self.moves.append(move)
             player.play(move)
             winner = self.winner()
+            console.print(self.board)
         return winner
 
     def valid_move(self, move: str):
