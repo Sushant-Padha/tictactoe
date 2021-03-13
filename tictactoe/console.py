@@ -13,7 +13,7 @@ class Console:
 
     @staticmethod
     def clear():
-        os.system('cls')
+        os.system('clear')
 
     @staticmethod
     def print(*args, **kwargs):
