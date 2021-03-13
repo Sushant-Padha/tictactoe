@@ -1,7 +1,15 @@
 from typing import Any, Iterable
-import numpy as np
 
 box_drawing = ['┛', '┫', '┓', '┳', '┏', '┣', '┗', '┻', '━', '┃', '╋']
+"""
+┏━━━┳━━━┳━━━┓
+┃ X ┃ X ┃ X ┃
+┣━━━╋━━━╋━━━┫
+┃ X ┃ X ┃ X ┃
+┣━━━╋━━━╋━━━┫
+┃ X ┃ X ┃ X ┃
+┗━━━┻━━━┻━━━┛
+"""
 
 
 class Board:
@@ -26,12 +34,32 @@ class Board:
     def __str__(self):
         '''Pretty representation of board
         '''
-        # for i, row in enumerate(self.board):
-        #     if i == 0:
-        #         print()
-        #     for j, col in enumerate(row):
-        #         pass
-        return np.array(self.state).__str__()
+        c = box_drawing
+        n = self.n
+        last = len(self.state)
+        formatted_str = ""
+        for i, row in enumerate(self.state):
+            # make top edge
+            if i == 0:
+                formatted_str += c[4]
+                formatted_str += (c[8] * 3 + c[3]) * n
+                formatted_str = formatted_str[:-1] + c[2]
+            # make internal edge
+            else:
+                formatted_str += c[5]
+                formatted_str += (c[8] * 3 + c[10]) * n
+                formatted_str = formatted_str[:-1] + c[1]
+            formatted_str += '\n'
+            formatted_str += c[9]
+            for j, col in enumerate(row):
+                col = str(col)
+                formatted_str += col.center(3, ' ') + c[9]
+            formatted_str += '\n'
+        # make bottom edge
+        formatted_str += c[6]
+        formatted_str += (c[8] * 3 + c[7]) * n
+        formatted_str = formatted_str[:-1] + c[0]
+        return formatted_str
 
     def update(self, index: int, value: str):
         '''Update board state
