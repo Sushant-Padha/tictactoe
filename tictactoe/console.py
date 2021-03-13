@@ -13,4 +13,7 @@ class Console:
 
     @staticmethod
     def clear():
-        os.system('clear')
+        if sys.platform in ('win32', 'win64'):
+            os.system('cls')
+        else:
+            os.system('clear')
