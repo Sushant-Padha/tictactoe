@@ -1,7 +1,7 @@
 from console import Console
-from .board import Board
-from .player import Player
-from .game import Game
+from board import Board
+from player import Player
+from game import Game
 
 
 def main():
@@ -34,8 +34,8 @@ def main():
 
 def print_instructions():
     print("\tTo select a unit for making a move, write its index," +
-          "starting from 0 in the top left corner, increasing by one" +
-          "as we go to the next column and skip to the beginning of the" +
+          "starting from 0 in the top left corner, increasing by one " +
+          "as we go to the next column and skip to the beginning of the " +
           "next row.")
 
 
