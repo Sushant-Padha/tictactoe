@@ -1,4 +1,4 @@
-from typing import Iterable
+from typing import Iterable, Union
 from board import Board
 from player import Player
 from console import Console
@@ -96,15 +96,7 @@ class Game:
             self.moves.append(move)
             player.play(move)
             winner = self.winner()
-        else:
-            console.print(f"Congratulations '{player.name}'! " +
-                          "You have won the game.")
-            console.print("Thanks for playing the game!")
-            feedback = console.input(
-                "Please leave some feedback for improvment: ")
-            console.print("Thank you for your feedback.")
-            console.print("Your feedback will be promptly ignored.")
-            console.print("Peace ✌")
+        return winner
 
     def valid_move(self, move: str):
         try:
@@ -117,7 +109,7 @@ class Game:
             return False
         return True
 
-    def find_player_by_marker(self, marker: str):
+    def find_player_by_marker(self, marker: str) -> Union[Player, None]:
         players = self.player1, self.player2
         for p in players:
             if p.marker == marker:
