@@ -25,15 +25,15 @@ def main():
     input("The game begins! Good luck. [Press Enter to start]")
     console.clear()
     winner = game.play()
-    console.print(f"Congratulations '{winner.name}'! " +
-                  "You have won the game.")
-    console.print("Thanks for playing the game!")
-    play_again = console.input("Would you like to play again? " +
-                               "(leave empty for no)")
+    print(f"Congratulations '{winner.name}'! " +
+          "You have won the game.")
+    print("Thanks for playing the game!")
+    play_again = input("Would you like to play again? " +
+                       "(leave empty for no)")
     if play_again:
         main()
     else:
-        console.print("Bye 👋")
+        print("Bye 👋")
 
 
 def print_instructions():
