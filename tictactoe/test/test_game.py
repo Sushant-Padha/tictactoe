@@ -89,6 +89,7 @@ def test_find_player_by_marker():
     assert game.find_player_by_marker(invalid_marker) is None
 
 
-def test_play():
-    print("Get ready to play tictactoe (for testing purposes) ...")
-    game.play()
+def test_play(play_cmdopt):
+    if play_cmdopt:
+        print("Get ready to play tictactoe (for testing purposes) ...")
+        game.play()
