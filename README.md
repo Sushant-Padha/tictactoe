@@ -69,4 +69,5 @@ Please make sure to update tests as appropriate.
 ---
 
 † Project root is the folder named "tictactoe" at the top level, i.e., it is shallow
+
 †† Source root is the folder named "tictactoe" inside another folder named "tictactoe", i.e., it is deep (nested)
