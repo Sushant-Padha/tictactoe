@@ -9,10 +9,11 @@ def pytest_addoption(parser):
         parser
     '''
     parser.addoption(
-        "--play", action="store_true", help="play sample game (in test_game.py)"
+        "--play", action="store_true", help="play game (in test_game.py)"
     )
 
 
 @pytest.fixture
-def play_cmdopt(request):
-    return request.config.getoption("--play")
+def play_cmdopt(request, pytestconfig):
+    opt = request.config.getoption("--play")
+    return opt
