@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from console import Console
-from board import Board
-from player import Player
-from game import Game
+from tictactoe.console import Console
+from tictactoe.board import Board
+from tictactoe.player import Player
+from tictactoe.game import Game
 
 
 def main():

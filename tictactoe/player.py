@@ -1,4 +1,4 @@
-from board import Board
+from tictactoe.board import Board
 
 
 class Player:
