@@ -16,7 +16,6 @@ def test_player():
 
 
 def test_play():
-    print(board.updates)
     player.play(index)
     assert board.get_value(index) == player.marker
     assert index in player.moves
