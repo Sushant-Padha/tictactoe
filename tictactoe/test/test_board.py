@@ -18,6 +18,7 @@ def test_state():
 
 def test_str():
     try:
+        print()
         print(board_obj)
     except:
         assert False
