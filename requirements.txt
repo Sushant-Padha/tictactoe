@@ -1,3 +1,4 @@
-pytest
-pycodestyle
-autopep8
+# do not use this for install_requires
+pytest==6.2.1
+pycodestyle==2.6.0
+autopep8==1.5.4
