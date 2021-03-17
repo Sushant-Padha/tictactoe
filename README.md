@@ -31,9 +31,17 @@ To develop you will need to install [Python3](https://python.org) for your speci
 
 Other than that, you will also need the following dependencies:
 
-- [pytest](https://pytest.org) for running tests
-- [pycodestyle](https://pypi.org/project/pycodestyle/) for linting
-- [autopep8](https://pypi.org/project/autopep8/) for formatting
+- [pytest](https://pytest.org) (v6.2.1) for running tests
+- [pycodestyle](https://pypi.org/project/pycodestyle/) (v2.6.0) for linting
+- [autopep8](https://pypi.org/project/autopep8/) (v1.5.4) for formatting
+
+They can be installed from the `requirements.txt` file provided in the source.
+
+Just run
+
+```bash
+python -m pip install -r requirements.txt
+```
 
 Preferable, you should use [git](https://git-scm.com) for version control and [virtual environments](https://docs.python.org/3/tutorial/venv.html) for creating a reusable, isolated environment
 
