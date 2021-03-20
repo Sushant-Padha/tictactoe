@@ -34,3 +34,7 @@ class Player:
         except:
             raise IndexError("index is invalid for board")
         self.moves.append(index)
+
+
+class AI(Player):
+    pass

@@ -70,6 +70,10 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 Please make sure to update tests as appropriate.
 
+## Todo
+
+- [ ] Add an AI to play against player
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
