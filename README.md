@@ -4,14 +4,12 @@ simple command line tictactoe game
 
 ## Installation
 
-1. Download the source code.
-2. Open up a terminal.
-3. `cd` into the project root†.
-4. Run the command (mind the period at the end of the command)
+Run the following command
 
-   ```bash
-   python -m pip install -e .
-   ```
+```bash
+python -m pip install git+https://Sushant-Padha/tictactoe.git
+```
+
 
 ## Usage
 
@@ -20,12 +18,18 @@ Follow the steps outlined in the [Installation](#installation) section.
 Play the game with the command
 
 ```bash
-python tictactoe
+python -m tictactoe
 ```
 
 ## Developing
 
-Follow the steps outlined in the [Installation](#installation) section.
+1. Download the source code.
+2. Open up a terminal.
+3. `cd` into the project root†.
+4. Run the command (mind the period at the end of the command)
+   ```bash
+   python -m pip install -e .
+   ```
 
 To develop you will need to install [Python3](https://python.org) for your specific OS and architecture
 
