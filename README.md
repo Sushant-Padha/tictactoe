@@ -7,7 +7,7 @@ simple command line tictactoe game
 Run the following command
 
 ```bash
-python -m pip install git+https://Sushant-Padha/tictactoe.git
+python -m pip install git+https://github.com/Sushant-Padha/tictactoe.git
 ```
 
 
