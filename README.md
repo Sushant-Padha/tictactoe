@@ -1,6 +1,6 @@
 # tictactoe
 
-simple command line tictactoe game
+Simple console-based tictactoe game written in Python.
 
 ## Installation
 
